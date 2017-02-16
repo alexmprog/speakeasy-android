@@ -13,7 +13,7 @@ Write an Android App that can exchange text messages with another Android App ba
 * When you type something, it sends it via TCP socket to the channel.
 * When something is broadcast on your channel code, you see the message appear in the chat history.
 
-[Mockup design](mockup.png)
+![Mockup design](mockup.png)
 
 ## Bonus points (in order of WOW factor)
 
