@@ -4,7 +4,7 @@ Hey thanks for taking my programming challenge. Out of respect for your time, pl
 
 ## Objective
 
-Write an Android App that can exchange text messages with another Android App based on a shared passcode and socket server.
+Write an Android App and socket server to exchange text messages with another Android App based on a shared "channel code".
 
 ## Instructions
 
