@@ -12,6 +12,7 @@ Write an Android App and socket server to exchange text messages with another An
 * The app should take a channel code. You can assume <=2 people per channel.
 * When you type something, it sends it via TCP socket to the channel.
 * When something is broadcast on your channel code, you see the message appear in the chat history.
+* Send a pull request to me ***along with your name*** when you're done or when it's been 2 hours
 
 ![Mockup design](mockup.png)
 
