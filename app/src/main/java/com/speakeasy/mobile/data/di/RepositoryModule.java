@@ -2,6 +2,8 @@ package com.speakeasy.mobile.data.di;
 
 import com.speakeasy.mobile.data.repository.connection.ConnectionRepository;
 import com.speakeasy.mobile.data.repository.connection.ConnectionRepositoryImpl;
+import com.speakeasy.mobile.data.repository.session.SessionRepository;
+import com.speakeasy.mobile.data.repository.session.SessionRepositoryImpl;
 
 import javax.inject.Singleton;
 
@@ -19,5 +21,11 @@ public class RepositoryModule {
 	@Singleton
 	public ConnectionRepository providesConnectionRepository() {
 		return new ConnectionRepositoryImpl();
+	}
+
+	@Provides
+	@Singleton
+	public SessionRepository providesSessionRepository() {
+		return new SessionRepositoryImpl();
 	}
 }
