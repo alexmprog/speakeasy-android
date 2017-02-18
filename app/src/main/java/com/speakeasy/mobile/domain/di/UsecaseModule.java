@@ -11,6 +11,7 @@ import com.speakeasy.mobile.domain.usecases.UseCaseExecutor;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
 import rx.Scheduler;
 import rx.android.schedulers.AndroidSchedulers;
@@ -20,6 +21,7 @@ import rx.schedulers.Schedulers;
  * Created by Alexandr Golovach on 18.02.17.
  */
 
+@Module
 public class UseCaseModule {
 
 	@Provides
