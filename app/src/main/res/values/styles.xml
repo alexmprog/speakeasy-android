@@ -11,4 +11,11 @@
         <item name="android:textColorSecondary">@color/secondary_text</item>
     </style>
 
+    <!--line separators-->
+    <style name="HorizontalLineSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#A0100C</item>
+    </style>
+
 </resources>
