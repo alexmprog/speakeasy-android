@@ -19,13 +19,13 @@ import speakeasy.benallfree.com.speakeasy.R;
 public class ChatMessageViewHolder extends RecyclerView.ViewHolder {
 
 	@Bind(R.id.conversation_list_item_message_time)
-	private TextView timeView;
+	protected TextView timeView;
 
 	@Bind(R.id.conversation_list_item_message_text)
-	private TextView contentView;
+	protected TextView contentView;
 
 	@Bind(R.id.conversation_list_item_user_photo)
-	private ImageView userPhotoView;
+	protected ImageView userPhotoView;
 
 	public ChatMessageViewHolder(View v) {
 		super(v);

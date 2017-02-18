@@ -28,8 +28,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 	public static final int VIEW_TYPE_ITEM_MY_MESSAGE = 0;
 	public static final int VIEW_TYPE_ITEM_OTHER_MESSAGE = 1;
 
-	private final List<Message> messageList;
-	private final User user;
+	private List<Message> messageList;
+	private User user;
 
 	public ChatListAdapter(@NonNull User user) {
 		this.messageList = new ArrayList<>();
@@ -78,6 +78,16 @@ public class ChatListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 	@Override
 	public int getItemCount() {
 		return messageList.size();
+	}
+
+	public void setMessageList(@NonNull List<Message> messageList) {
+		this.messageList = messageList;
+		notifyDataSetChanged();
+	}
+
+	public void addNewMessage(@NonNull Message message) {
+		this.messageList.add(0, message);
+		notifyItemInserted(0);
 	}
 
 }

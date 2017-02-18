@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.speakeasy.mobile.data.model.Channel;
 import com.speakeasy.mobile.data.model.User;
 import com.speakeasy.mobile.domain.usecases.AuthenticateUseCase;
 import com.speakeasy.mobile.domain.usecases.UseCaseExecutor;
 import com.speakeasy.mobile.presentation.BaseApp;
 
 import javax.inject.Inject;
+
+import rx.functions.Action1;
 
 /**
  * Created by Alexandr Golovach on 18.02.17.
@@ -36,7 +39,9 @@ public class ConnectionService extends Service {
 		authenticateUseCase
 				.authenticate(user)
 				.compose(useCaseExecutor.applySchedulers())
-				.subscribe();
+				.subscribe(channel -> {
+					// do nothing here
+				});
 		return START_STICKY;
 	}
 

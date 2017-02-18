@@ -1,6 +1,7 @@
 package com.speakeasy.mobile.presentation;
 
 import android.app.Application;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 
 import com.speakeasy.mobile.data.di.RepositoryModule;
@@ -8,6 +9,7 @@ import com.speakeasy.mobile.domain.di.UseCaseModule;
 import com.speakeasy.mobile.presentation.common.di.ApplicationComponent;
 import com.speakeasy.mobile.presentation.common.di.ApplicationModule;
 import com.speakeasy.mobile.presentation.common.di.DaggerApplicationComponent;
+import com.speakeasy.mobile.utils.service.ConnectionService;
 
 
 /**
@@ -32,6 +34,8 @@ public class BaseApp extends Application implements Injector {
 
 		// init object graph
 		initializeObjectGraph();
+
+		startService(new Intent(this, ConnectionService.class));
 	}
 
 	protected void initializeObjectGraph() {

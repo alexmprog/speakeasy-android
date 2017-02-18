@@ -22,7 +22,7 @@ public class AuthenticateUseCase {
 	@NonNull
 	private SessionRepository sessionRepository;
 
-	private PublishSubject<Boolean> isAuthenticatedSubject = PublishSubject.create();
+	private PublishSubject<Channel> isAuthenticatedSubject = PublishSubject.create();
 
 	public AuthenticateUseCase(@NonNull ConnectionRepository connectionRepository, @NonNull SessionRepository sessionRepository) {
 		this.connectionRepository = connectionRepository;
@@ -33,7 +33,7 @@ public class AuthenticateUseCase {
 		return connectionRepository.authenticate(user).filter(channel -> {
 			sessionRepository.setCurrentUser(user).toBlocking().first();
 			sessionRepository.setCurrentChannel(channel).toBlocking().first();
-			isAuthenticatedSubject.onNext(true);
+			isAuthenticatedSubject.onNext(channel);
 			return true;
 		});
 	}
@@ -46,7 +46,7 @@ public class AuthenticateUseCase {
 		return sessionRepository.getCurrentChannel();
 	}
 
-	public Observable<Boolean> isAuthenticated() {
+	public Observable<Channel> isAuthenticated() {
 		return isAuthenticatedSubject;
 	}
 

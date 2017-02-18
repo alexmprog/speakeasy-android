@@ -3,6 +3,7 @@ package com.speakeasy.mobile.presentation.ui.chat;
 import android.support.annotation.NonNull;
 
 import com.speakeasy.mobile.data.model.Message;
+import com.speakeasy.mobile.data.model.User;
 import com.speakeasy.mobile.presentation.common.view.MvpView;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface ChatView extends MvpView {
 
 	void showChannelName(@NonNull String channelName);
 
-	void showMessages(@NonNull List<Message> messageList);
+	void showMessages(@NonNull User user, @NonNull List<Message> messageList);
 
 	void showSendProgress();
 

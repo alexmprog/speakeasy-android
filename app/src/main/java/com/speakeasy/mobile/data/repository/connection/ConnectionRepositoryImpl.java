@@ -27,7 +27,7 @@ public class ConnectionRepositoryImpl implements ConnectionRepository {
 	public Observable<Channel> authenticate(@NonNull User user) {
 		return Observable.fromCallable(() -> {
 			// emulate long running operation
-			Thread.sleep(1000);
+			Thread.currentThread().sleep(5000);
 
 			// create fake echo user
 			User echoUser = new User("fake_user_id", "Echo Message Service");
@@ -43,7 +43,7 @@ public class ConnectionRepositoryImpl implements ConnectionRepository {
 	public Observable<List<Message>> getMessages(@NonNull Channel channel) {
 		return Observable.fromCallable(() -> {
 			// emulate long running operation
-			Thread.sleep(1000);
+			Thread.currentThread().sleep(1000);
 
 			List<User> userList = channel.getUserList();
 			User currentUser = userList.get(0);
@@ -65,7 +65,7 @@ public class ConnectionRepositoryImpl implements ConnectionRepository {
 			@Override
 			public Void call() throws Exception {
 				// emulate long running operation
-				Thread.sleep(1000);
+				Thread.currentThread().sleep(1000);
 				return null;
 			}
 		}).doOnCompleted(() -> {
