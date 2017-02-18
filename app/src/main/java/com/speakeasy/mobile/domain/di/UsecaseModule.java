@@ -46,6 +46,7 @@ public class UseCaseModule {
 	}
 
 	@Provides
+	@Singleton
 	public AuthenticateUseCase providesAuthenticateUseCase(@NonNull ConnectionRepository connectionRepository, @NonNull SessionRepository sessionRepository) {
 		return new AuthenticateUseCase(connectionRepository, sessionRepository);
 	}

@@ -3,6 +3,7 @@ package com.speakeasy.mobile.presentation.common.di;
 import com.speakeasy.mobile.data.di.RepositoryModule;
 import com.speakeasy.mobile.domain.di.UseCaseModule;
 import com.speakeasy.mobile.presentation.ui.chat.ChatPresenter;
+import com.speakeasy.mobile.utils.service.ConnectionService;
 
 import javax.inject.Singleton;
 
@@ -16,7 +17,8 @@ import dagger.Component;
 @Component(modules = {ApplicationModule.class, RepositoryModule.class, UseCaseModule.class})
 public interface ApplicationComponent {
 
-	// presenters
+	void inject(ConnectionService connectionService);
+
 	void inject(ChatPresenter chatPresenter);
 
 }
